@@ -1,28 +1,39 @@
 <script>
+	// imports
+	import Nav from './components/Nav.svelte'
 	import Header from './components/Header.svelte'
-	import Footer from './components/Footer.svelte'
-	import Numbers from './components/Numbers.svelte'
-	import Mount from './components/Mount.svelte'
+	import Closet from './components/Closet.svelte'
 
-	export let name;
-	let count = 0;
-	const addOne =() => {
-		count += 1
-	}
-	let input = "Wish list"
-	const submit = () => {
-		alert(input)
-	}
+	// form
+	const categories = [
+		{id: 1, text: "Bottom"},
+		{id: 2, text: "Top"},
+		{id: 3, text: "Onepeice"},
+		{id: 4, text: "Accessory"},
+		{id: 5, text: "Outerwear"}
+	]
 </script>
 
 <main>
-	<Header myProp={input}/>
-	<h1>{name}!</h1>
-	<Mount/>
+	<h1>WornOut</h1>
+	<h2>Today I wore</h2>
+	<form>
+		<select>
+			{#each categories as category}
+			<option value={category}>{category.text}
+			</option>
+			{/each}
+		</select>
+	</form>
+	<Nav />
 </main>
 
 <style>
+	main{
+		text-align: center;
+	}
+
 	h1 {
-		color: aqua
+		color: black;
 	}
 </style>
