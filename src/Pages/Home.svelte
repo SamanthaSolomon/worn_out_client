@@ -1,5 +1,5 @@
 <script>
-//imports
+//component imports
 import Find from "../components/Find.svelte"
 import AddUpdateButton from "../components/AddUpdateButton.svelte"
 

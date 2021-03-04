@@ -1,8 +1,10 @@
 <script>
+    //library imports
+   import { Router, Route, Link } from "svelte-navigator"
 </script>
 
 <header>
-    <h5>Worn Out</h5>
+    <Link to="/">Worn Out</Link>
 </header>
 
 <style>
