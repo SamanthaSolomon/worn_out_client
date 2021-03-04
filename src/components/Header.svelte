@@ -2,7 +2,7 @@
 </script>
 
 <header>
-    <h4>Worn Out</h4>
+    <h5>Worn Out</h5>
 </header>
 
 <style>
