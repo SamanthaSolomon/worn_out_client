@@ -1,13 +1,12 @@
 <script>
-   //library imports
-   import { Router, Route, Link } from "svelte-navigator"
+   
 </script>
 
 <nav>
-   <Link to="/addnew" class="pure-button">Add New</Link>
-   <Link to="/dashboard" class="pure-button">Worn</Link>
-   <Link to="/closet" class="pure-button">Closet</Link>
-   <Link to="/about" class="pure-button">About</Link>
+   <a href='/form/:action' class="pure-button">Add New</a>
+   <a href='/dashboard' class="pure-button">Worn</a>
+   <a href='/closet' class="pure-button">Closet</a>
+   <a href='/about' class="pure-button">About</a>
 </nav>
 
 

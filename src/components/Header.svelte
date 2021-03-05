@@ -1,11 +1,15 @@
 <script>
-    //library imports
-   import { Router, Route, Link } from "svelte-navigator"
+//libraries
+import router from 'page'
+
 </script>
 
 <header>
-    <Link to="/">Worn Out</Link>
+    <a href="/" class="header">Worn Out</a>
 </header>
 
 <style>
+    header{
+        text-align: center
+    }
 </style>

@@ -1,7 +1,11 @@
 <script>
+//libraries
 import {onMount} from "svelte"
 
+//imports
+import Header from "../components/Header.svelte"
 
+//api call for all items
 let items = []
 
 onMount( async () => {
@@ -16,6 +20,7 @@ onMount( async () => {
 
 
 <div>
+    <Header />
     {#each items as item}
     <img src={item.img} alt={item.color}{item.style}>
     <h4>{item.style} | {item.color}</h4>
