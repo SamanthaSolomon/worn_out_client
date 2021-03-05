@@ -1,6 +1,6 @@
 <script>
 //libraries
-import {onMount} from "svelte"
+import { onMount } from "svelte"
 
 //imports
 import Header from "../components/Header.svelte"
