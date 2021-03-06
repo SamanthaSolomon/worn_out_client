@@ -7,16 +7,27 @@
     import Header from '../components/Header.svelte'
 
     //form
+    let result
+
     const { form, handleChange, handleSubmit } = createForm({
       initialValues: {
-        title: "",
-        name: "",
-        email: ""
+        img: "",
+        category: "",
+        style: "",
+        use: "",
+        color: ""
       },
-      onSubmit: values => {
-        alert(JSON.stringify(values));
+      //post new item
+      onSubmit: async (value) => {
+          const res = await fetch('https://damp-peak-94577.herokuapp.com/users/1/items', {
+              method: 'POST', 
+              body: JSON.stringify(value)
+            })
+          const json = await res.json()
+          result = JSON.stringify(json)
       }
     });
+    
   </script>
 
 
@@ -29,7 +40,6 @@
         <label for="img">Image (url)</label>
         <input id="img" 
         name="img"
-        on:change={handleChange}
         bind:value={$form.img}
         />
 
@@ -37,7 +47,6 @@
     <select
       id="category"
       name="category"
-      on:change={handleChange}
       bind:value={$form.category}>
       <option>Top</option>
       <option>Bottom</option>
@@ -51,7 +60,6 @@
     <select
       id="style"
       name="style"
-      on:change={handleChange}
       bind:value={$form.style}>
       <option>Sweater</option>
       <option>Sweatshirt</option>
@@ -77,7 +85,6 @@
     <select
       id="use"
       name="use"
-      on:change={handleChange}
       bind:value={$form.use}>
       <option>Everday</option>
       <option>Work</option>
@@ -91,7 +98,6 @@
     <select
       id="color"
       name="color"
-      on:change={handleChange}
       bind:value={$form.color}>
       <option>Blue</option>
       <option>Black</option>
@@ -110,9 +116,12 @@
       <option>Orange</option>
       <option>Red</option>
     </select>
-  </form>
+    
+     <button type="button" on:click={handleSubmit}>Add</button>
+    </form>
 
-    <AddUpdateButton/>
+    <pre>{result}</pre>
+
 </div>
 
 <style>
