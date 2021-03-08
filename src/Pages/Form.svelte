@@ -1,34 +1,34 @@
 <script>
-    //libraries
-    import { createForm } from "svelte-forms-lib"
-
     //imports
     import AddUpdateButton from '../components/AddUpdateButton.svelte'
     import Header from '../components/Header.svelte'
 
-    //form
-    let result
 
-    const { form, handleChange, handleSubmit } = createForm({
-      initialValues: {
-        img: "",
-        category: "",
-        style: "",
-        use: "",
-        color: ""
-      },
       //post new item
-      onSubmit: async (value) => {
-          const res = await fetch('https://damp-peak-94577.herokuapp.com/users/1/items', {
-              method: 'POST', 
-              body: JSON.stringify(value)
-            })
-          const json = await res.json()
-          result = JSON.stringify(json)
-      }
-    });
+    let url = 'https://damp-peak-94577.herokuapp.com/users/1/items'
+    let img = null, 
+        category = null, 
+        style = null, 
+        color = null, 
+        use = null
+
+    async function handleSubmit(){
+        const post = { img, category, style, color, use }
+        const response = await fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(post)
+        })
+        if(response.ok){
+            const result = await response.json()
+            console.log("result", result)
+        }
+    }
+        
     
-  </script>
+ </script>
 
 
 
@@ -40,87 +40,86 @@
         <label for="img">Image (url)</label>
         <input id="img" 
         name="img"
-        bind:value={$form.img}
+        bind:value={img}
         />
 
-    <label for="category">Category</label>
-    <select
-      id="category"
-      name="category"
-      bind:value={$form.category}>
-      <option>Top</option>
-      <option>Bottom</option>
-      <option>Shoes</option>
-      <option>Onepeice</option>
-      <option>Accessory</option>
-      <option>Outerwear</option>
-    </select>
+        <label for="category">Category</label>
+        <select
+        id="category"
+        name="category"
+        bind:value={category}>
+        <option>Top</option>
+        <option>Bottom</option>
+        <option>Shoes</option>
+        <option>Onepeice</option>
+        <option>Accessory</option>
+        <option>Outerwear</option>
+        </select>
 
-    <label for="style">Style</label>
-    <select
-      id="style"
-      name="style"
-      bind:value={$form.style}>
-      <option>Sweater</option>
-      <option>Sweatshirt</option>
-      <option>T-shirt</option>
-      <option>Tank-top</option>
-      <option>Button-up</option>
-      <option>Long-sleaved</option>
-      <option>Pants</option>
-      <option>Leggings</option>
-      <option>Sweatpants</option>
-      <option>Shorts</option>
-      <option>Skirt</option>
-      <option>Dress</option>
-      <option>Jumpsuit</option>
-      <option>Overcoat</option>
-      <option>Jacket</option>
-      <option>Sneaker</option>
-      <option>Bag</option>
-      <option>Heels</option>
-    </select>
+        <label for="style">Style</label>
+        <select
+        id="style"
+        name="style"
+        bind:value={style}>
+        <option>Sweater</option>
+        <option>Sweatshirt</option>
+        <option>T-shirt</option>
+        <option>Tank-top</option>
+        <option>Button-up</option>
+        <option>Long-sleaved</option>
+        <option>Pants</option>
+        <option>Leggings</option>
+        <option>Sweatpants</option>
+        <option>Shorts</option>
+        <option>Skirt</option>
+        <option>Dress</option>
+        <option>Jumpsuit</option>
+        <option>Overcoat</option>
+        <option>Jacket</option>
+        <option>Sneaker</option>
+        <option>Bag</option>
+        <option>Heels</option>
+        </select>
 
-    <label for="use">Use</label>
-    <select
-      id="use"
-      name="use"
-      bind:value={$form.use}>
-      <option>Everday</option>
-      <option>Work</option>
-      <option>Specialty</option>
-      <option>Workout</option>
-      <option>Outdoor</option>
-      <option>Sleep/lounge</option>
-    </select>
+        <label for="use">Use</label>
+        <select
+        id="use"
+        name="use"
+        bind:value={use}>
+        <option>Everday</option>
+        <option>Work</option>
+        <option>Specialty</option>
+        <option>Workout</option>
+        <option>Outdoor</option>
+        <option>Sleep/lounge</option>
+        </select>
 
-    <label for="style">Color</label>
-    <select
-      id="color"
-      name="color"
-      bind:value={$form.color}>
-      <option>Blue</option>
-      <option>Black</option>
-      <option>Grey</option>
-      <option>Cream</option>
-      <option>White</option>
-      <option>Pink</option>
-      <option>Green</option>
-      <option>Yellow</option>
-      <option>Orange</option>
-      <option>Brown</option>
-      <option>Denim</option>
-      <option>Metalic</option>
-      <option>Multi</option>
-      <option>Purple</option>
-      <option>Orange</option>
-      <option>Red</option>
-    </select>
-    
-     <button type="button" on:click={handleSubmit}>Add</button>
+        <label for="style">Color</label>
+        <select
+        id="color"
+        name="color"
+        bind:value={color}>
+        <option>Blue</option>
+        <option>Black</option>
+        <option>Grey</option>
+        <option>Cream</option>
+        <option>White</option>
+        <option>Pink</option>
+        <option>Green</option>
+        <option>Yellow</option>
+        <option>Orange</option>
+        <option>Brown</option>
+        <option>Denim</option>
+        <option>Metalic</option>
+        <option>Multi</option>
+        <option>Purple</option>
+        <option>Orange</option>
+        <option>Red</option>
+        </select>
+        
+        <button type="submit" on:click={handleSubmit}>Add</button>
     </form>
 
-    <pre>{result}</pre>
 
 </div>
 
