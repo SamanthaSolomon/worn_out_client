@@ -2,7 +2,6 @@
     //libraries
     import { onMount } from "svelte"
     //imports
-    import AddUpdateButton from '../components/AddUpdateButton.svelte'
     import Header from '../components/Header.svelte'
 
     // call for one item
@@ -14,6 +13,11 @@
         item = await response.json()
     })
 
+    //Delete item
+    const handleClick = () => {
+        console.log('delete button clicked')
+    }
+
 </script>
 
 
@@ -24,8 +28,7 @@
     <h4>{item.style} | {item.color}</h4>
     <p>{item.use} | {item.category}</p>
     <h3>Worn {item.wear_count} times since {item.created_at}</h3>
-    <AddUpdateButton />
-    
+    <button on:click={() => handleClick()}>Remove item from my closet</button>  
 </div>
 
 <style>
