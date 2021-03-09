@@ -28,8 +28,7 @@
             body: JSON.stringify(post)
         })
         if(response.ok){
-            const result = await response.json()
-            let successMessage = true     
+            const result = await response.json()  
         }
     }
  </script>
@@ -130,10 +129,7 @@
         <option>Red</option>
         </select>
         
-        <button type="submit" 
-        on:submit={handleSubmit} 
-        on:click={toggleModal}
-        >Add to My Closet</button>
+        <button type="submit" on:click={toggleModal}>Add to My Closet</button>
     </form>
 </div>
 

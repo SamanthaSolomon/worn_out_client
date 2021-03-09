@@ -4,7 +4,7 @@ import { onMount } from "svelte"
 
 //imports
 import Header from "../components/Header.svelte"
-import Item from "./Pages/Item.svelte"
+
 
 //api call for all items
 let items = []
@@ -17,6 +17,7 @@ onMount( async () => {
 
 //see details of one item
 const handleClick = (id) => {
+    console.log('this item was clicked-', id)
     window.location.href = '/item'
 }
 
@@ -34,9 +35,10 @@ const handleClick = (id) => {
         <h3>Worn {item.wear_count} times since {item.created_at}</h3>
     </div>
     {:else}
-    <h3>There are no items in your closet.</h3>
+    <h3>Loading your closet.</h3>
     {/each}
 </div>
+
 
 <style>
    img {

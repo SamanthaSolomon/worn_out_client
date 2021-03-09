@@ -20,7 +20,7 @@
 	// router ('/dashboard', () => page = Dashboard)
 	router('/closet', () => page = Closet)
 	// router ('/About', () => page = About)
-	router('/item', () => page = Item)
+	router('/item/:id', () => page = Item)
 
 	router.start()
 </script>
@@ -28,7 +28,18 @@
 
 
 <main>
-	<svelte:component this={page} {params} />
+	{#if page === Home}
+		<Home />
+	{/if}
+	{#if page === Form}
+		<Form />
+	{/if}
+	{#if page === Closet}
+		<Closet />
+	{/if}
+	{#if page === Item}
+		<Item />
+	{/if}
 	<Nav />
 </main>
 
