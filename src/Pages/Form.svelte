@@ -6,10 +6,7 @@ import Item from './Item.svelte'
 
 
     //item added message
-    // let itemAdded = false
-    // function added(){
-    //     itemAdded = true
-    // }
+    let successMessage = false
 
     //post new item
     let url = 'https://damp-peak-94577.herokuapp.com/users/1/items'
@@ -30,17 +27,22 @@ import Item from './Item.svelte'
         })
         if(response.ok){
             const result = await response.json()
+            let successMessage = true     
         }
-
-        
     }
  </script>
 
 
 
+
+<Header />
+ {#if successMessage === false}
+ <p>Add new item to my closet</p>
+ {:else if successMessage === true}   
+ <p>New item added to closet.</p>
+ {/if}
+
 <div class="form">
-    <Header />
-    <p>Add new item to my closet</p>
     <form class="form-inputs" on:submit={handleSubmit}>
         <label for="img">Image (url)</label>
         <input id="img" 
@@ -128,8 +130,6 @@ import Item from './Item.svelte'
         
         <button type="submit" on:submit={handleSubmit}>Add to My Closet</button>
     </form>
-
-
 </div>
 
 <style>
