@@ -35,13 +35,13 @@ onMount( async () => {
 })
 
 //see details of one item
-const oneItem = async (id) => {
+let item = {}
+
+const getOneItem = async (id) => {
 	const response = await fetch(url + '/id')
-
-    // console.log('this item was clicked-', id)
-    window.location.href = `/item/${id}`
+	item = await response.json
+	console.log('item-', item)
 }
-
 </script>
 
 
@@ -54,10 +54,10 @@ const oneItem = async (id) => {
 		<Form />
 	{/if}
 	{#if page === Closet}
-		<Closet {items}/>
+		<Closet {items} {getOneItem}/>
 	{/if}
 	{#if page === Item}
-		<Item {id}/>
+		<Item />
 	{/if}
 	<Nav />
 </main>

@@ -2,7 +2,11 @@
 //imports
 import Header from "../components/Header.svelte"
 export let items
+export let getOneItem
 
+const handleClick = (id) => {
+    window.location.href = `/item/${id}`
+}
 
 
 </script>
