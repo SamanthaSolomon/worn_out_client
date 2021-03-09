@@ -4,12 +4,14 @@
     //imports
     import Header from '../components/Header.svelte'
 
+    export let itemId = ''
+
     // call for one item
     let item = []
     let url = 'https://damp-peak-94577.herokuapp.com/users/1/items/'
 
-    onMount( async () => {
-        const response = await fetch(url + '2')
+    onMount( async (itemId) => {
+        const response = await fetch(url + itemId)
         item = await response.json()
     })
 

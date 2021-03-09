@@ -32,7 +32,7 @@
 
 
 <Header />
-<Modal />
+<Modal message="New item added to closet!" isAdded={true}/>
 <div class="form">
     <p>Add new item to my closet</p>
     <form class="form-inputs" on:submit={handleSubmit}>

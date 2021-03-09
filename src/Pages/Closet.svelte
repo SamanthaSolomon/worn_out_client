@@ -16,7 +16,7 @@ onMount( async () => {
 
 //see details of one item
 const handleClick = (id) => {
-    console.log('div with this id clicked-', id)
+    window.location.href = '/item'
 }
 
 

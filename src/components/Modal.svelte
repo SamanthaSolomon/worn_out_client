@@ -1,12 +1,13 @@
 <script>
+export let message
 let successMessage = true
-let isAdded = true
+export let isAdded = false
 </script>
 
 {#if successMessage}
     <div class="backdrop" class:added={isAdded}>
         <div class ="modal">
-            <p>New item added to closet.</p>
+            <p>{message}</p>
         </div>
     </div>
 {/if}
