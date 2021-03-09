@@ -21,10 +21,10 @@
 		next()
 	}, () => page = Form)
 	// router ('/dashboard', () => page = Dashboard)
-	router ('/closet', () => page = Closet)
+	router('/closet', () => page = Closet)
 	// router ('/About', () => page = About)
 	router('/item', () => page = Item)
-	
+
 	router.start()
 </script>
 
