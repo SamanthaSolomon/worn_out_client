@@ -2,9 +2,16 @@
     //imports
     import AddUpdateButton from '../components/AddUpdateButton.svelte'
     import Header from '../components/Header.svelte'
+import Item from './Item.svelte'
 
 
-      //post new item
+    //item added message
+    // let itemAdded = false
+    // function added(){
+    //     itemAdded = true
+    // }
+
+    //post new item
     let url = 'https://damp-peak-94577.herokuapp.com/users/1/items'
     let img = null, 
         category = null, 
@@ -23,7 +30,6 @@
         })
         if(response.ok){
             const result = await response.json()
-            console.log("result", result)
         }
     }
         
@@ -35,7 +41,6 @@
 <div class="form">
     <Header />
     <p>Add new item to my closet</p>
-
     <form class="form-inputs" on:submit={handleSubmit}>
         <label for="img">Image (url)</label>
         <input id="img" 
@@ -48,6 +53,7 @@
         id="category"
         name="category"
         bind:value={category}>
+        <option></option>
         <option>Top</option>
         <option>Bottom</option>
         <option>Shoes</option>
@@ -61,6 +67,7 @@
         id="style"
         name="style"
         bind:value={style}>
+        <option></option>
         <option>Sweater</option>
         <option>Sweatshirt</option>
         <option>T-shirt</option>
@@ -86,6 +93,7 @@
         id="use"
         name="use"
         bind:value={use}>
+        <option></option>
         <option>Everday</option>
         <option>Work</option>
         <option>Specialty</option>
@@ -99,6 +107,7 @@
         id="color"
         name="color"
         bind:value={color}>
+        <option></option>
         <option>Blue</option>
         <option>Black</option>
         <option>Grey</option>
@@ -117,7 +126,7 @@
         <option>Red</option>
         </select>
         
-        <button type="submit" on:click={handleSubmit}>Add</button>
+        <button type="submit" on:submit={handleSubmit}>Add to My Closet</button>
     </form>
 
 

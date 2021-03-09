@@ -12,7 +12,6 @@ onMount( async () => {
     const response = await fetch('https://damp-peak-94577.herokuapp.com/users/1/items')
     items = await response.json()
 
-    console.log(items)
 })
 
 
