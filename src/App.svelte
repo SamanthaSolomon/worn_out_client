@@ -11,7 +11,7 @@
 	import Closet from './Pages/Closet.svelte'
 	import Form from './Pages/Form.svelte'
 	import Item from './Pages/Item.svelte'
-import AddUpdateButton from './components/AddUpdateButton.svelte'
+
 
 //routing
 	let page
@@ -25,15 +25,23 @@ import AddUpdateButton from './components/AddUpdateButton.svelte'
 
 	router.start()
 
+let url = 'https://damp-peak-94577.herokuapp.com/users/1/items'
 
 //get all items
 let items = []
-
 onMount( async () => {
-    const response = await fetch('https://damp-peak-94577.herokuapp.com/users/1/items')
+    const response = await fetch(url)
     items = await response.json()
-
 })
+
+//see details of one item
+const oneItem = async (id) => {
+	const response = await fetch(url + '/id')
+
+    // console.log('this item was clicked-', id)
+    window.location.href = `/item/${id}`
+}
+
 </script>
 
 
@@ -49,7 +57,7 @@ onMount( async () => {
 		<Closet {items}/>
 	{/if}
 	{#if page === Item}
-		<Item />
+		<Item {id}/>
 	{/if}
 	<Nav />
 </main>

@@ -4,12 +4,6 @@ import Header from "../components/Header.svelte"
 export let items
 
 
-//see details of one item
-const handleClick = (id) => {
-    // console.log('this item was clicked-', id)
-    window.location.href = `/item/${id}`
-}
-
 
 </script>
 
