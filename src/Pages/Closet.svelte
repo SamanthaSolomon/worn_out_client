@@ -22,7 +22,7 @@ onMount( async () => {
     <Header />
     {#each items as item}
     <img src={item.img} alt={item.color}{item.style}>
-    <h4>{item.style} | {item.color}</h4>
+    <a href='/item'><h4>{item.style} | {item.color}</h4></a>
     <p>{item.use} | {item.category}</p>
     <h3>Worn {item.wear_count} times since {item.created_at}</h3>
     
