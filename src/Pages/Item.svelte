@@ -27,3 +27,9 @@
     <AddUpdateButton />
     
 </div>
+
+<style>
+    img {
+     width: 10rem
+    } 
+ </style>
