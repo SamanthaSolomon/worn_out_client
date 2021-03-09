@@ -1,24 +1,13 @@
 <script>
-//libraries
-import { onMount } from "svelte"
-
 //imports
 import Header from "../components/Header.svelte"
+export let items
 
-
-//api call for all items
-let items = []
-
-onMount( async () => {
-    const response = await fetch('https://damp-peak-94577.herokuapp.com/users/1/items')
-    items = await response.json()
-
-})
 
 //see details of one item
 const handleClick = (id) => {
-    console.log('this item was clicked-', id)
-    window.location.href = '/item'
+    // console.log('this item was clicked-', id)
+    window.location.href = `/item/${id}`
 }
 
 

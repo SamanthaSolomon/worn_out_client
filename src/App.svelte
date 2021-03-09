@@ -1,6 +1,7 @@
 <script>
 //libraries
 	import router from 'page'
+	import { onMount } from "svelte"
 
 // imports
 	import Nav from './components/Nav.svelte'
@@ -10,10 +11,10 @@
 	import Closet from './Pages/Closet.svelte'
 	import Form from './Pages/Form.svelte'
 	import Item from './Pages/Item.svelte'
+import AddUpdateButton from './components/AddUpdateButton.svelte'
 
 //routing
 	let page
-	let params
 
 	router('/', () => page = Home)
 	router('/form', () => page = Form)
@@ -23,6 +24,16 @@
 	router('/item/:id', () => page = Item)
 
 	router.start()
+
+
+//get all items
+let items = []
+
+onMount( async () => {
+    const response = await fetch('https://damp-peak-94577.herokuapp.com/users/1/items')
+    items = await response.json()
+
+})
 </script>
 
 
@@ -35,7 +46,7 @@
 		<Form />
 	{/if}
 	{#if page === Closet}
-		<Closet />
+		<Closet {items}/>
 	{/if}
 	{#if page === Item}
 		<Item />
