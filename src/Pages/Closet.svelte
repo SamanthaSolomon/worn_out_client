@@ -4,6 +4,7 @@ import { onMount } from "svelte"
 
 //imports
 import Header from "../components/Header.svelte"
+import Item from "./Pages/Item.svelte"
 
 //api call for all items
 let items = []

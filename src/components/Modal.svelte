@@ -1,11 +1,11 @@
 <script>
 export let message
-let successMessage = true
+export let successMessage = false
 export let isAdded = false
 </script>
 
 {#if successMessage}
-    <div class="backdrop" class:added={isAdded}>
+    <div class="backdrop" class:added={isAdded} on:click>
         <div class ="modal">
             <p>{message}</p>
         </div>

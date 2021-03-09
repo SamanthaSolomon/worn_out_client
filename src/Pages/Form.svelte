@@ -3,6 +3,12 @@
     import Header from '../components/Header.svelte'
     import Modal from '../components/Modal.svelte'
     
+    //show modal
+    let successMessage = false
+
+    const toggleModal = () => {
+        successMessage = !successMessage
+    }
 
     //post new item
     let url = 'https://damp-peak-94577.herokuapp.com/users/1/items'
@@ -32,7 +38,11 @@
 
 
 <Header />
-<Modal message="New item added to closet!" isAdded={true}/>
+<Modal 
+    message="New item added to closet!" 
+    isAdded={true} 
+    successMessage={successMessage}
+    on:click={toggleModal}/>
 <div class="form">
     <p>Add new item to my closet</p>
     <form class="form-inputs" on:submit={handleSubmit}>
@@ -120,7 +130,10 @@
         <option>Red</option>
         </select>
         
-        <button type="submit" on:submit={handleSubmit}>Add to My Closet</button>
+        <button type="submit" 
+        on:submit={handleSubmit} 
+        on:click={toggleModal}
+        >Add to My Closet</button>
     </form>
 </div>
 
