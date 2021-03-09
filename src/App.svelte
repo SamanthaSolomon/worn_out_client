@@ -16,10 +16,7 @@
 	let params
 
 	router('/', () => page = Home)
-	router('/form/:action', (ctx, next) => {
-		params = ctx.params
-		next()
-	}, () => page = Form)
+	router('/form', () => page = Form)
 	// router ('/dashboard', () => page = Dashboard)
 	router('/closet', () => page = Closet)
 	// router ('/About', () => page = About)

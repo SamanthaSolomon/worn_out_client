@@ -1,12 +1,8 @@
 <script>
     //imports
-    import AddUpdateButton from '../components/AddUpdateButton.svelte'
     import Header from '../components/Header.svelte'
-import Item from './Item.svelte'
-
-
-    //item added message
-    let successMessage = false
+    import Modal from '../components/Modal.svelte'
+    
 
     //post new item
     let url = 'https://damp-peak-94577.herokuapp.com/users/1/items'
@@ -36,13 +32,9 @@ import Item from './Item.svelte'
 
 
 <Header />
- {#if successMessage === false}
- <p>Add new item to my closet</p>
- {:else if successMessage === true}   
- <p>New item added to closet.</p>
- {/if}
-
+<Modal />
 <div class="form">
+    <p>Add new item to my closet</p>
     <form class="form-inputs" on:submit={handleSubmit}>
         <label for="img">Image (url)</label>
         <input id="img" 
