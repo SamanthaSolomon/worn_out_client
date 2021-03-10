@@ -18,7 +18,7 @@ import router from 'page'
         background-color: white;
         width: 100%;
         padding-top: 0.5rem;
-        padding-bottom: 1rem;
+        padding-bottom: 0.7rem;
         border-top: 20px solid var(--teal);
         border-width: 50%;
     }
