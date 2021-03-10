@@ -20,7 +20,6 @@ const handleClick = (id) => {
         <img src={item.img} alt={item.color}{item.style}>
         <h4>{item.style} | {item.color}</h4>
         <p>{item.use} | {item.category}</p>
-        <h3>Worn {item.wear_count} times.</h3>
         <button class="details-button" on:click = {() => handleClick(item.id)}>Details ></button>
     </div>
     {:else}
