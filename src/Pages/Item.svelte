@@ -10,14 +10,25 @@
 
     let url = 'https://damp-peak-94577.herokuapp.com/users/1/items'
 
-    //Update item wear coun
-    // const woreIt = () => {
-        
-    // }
+    //Update item wear count
+    let wear_count = wear_count + 1
+
+    const woreIt = async (item) => {
+        const response = await fetch (url + `/${item.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(wear_count)
+        })
+        if(response.ok){
+            const result = await response.json()
+        }
+    }
     
     // Delete item
     const deleteItem = async (item) => {
-        console.log('id-', item)
+        // console.log('item-', item)
         const response = await fetch(url + `/${item.id}`, {
             method: "DELETE",
             headers: {
@@ -39,7 +50,7 @@
         <h4>{item.style} | {item.color}</h4>
         <p>{item.use} | {item.category}</p>
         <h3>Worn {item.wear_count} times.</h3>
-        <!-- <button on:click={() => woreIt()}>Wore It!</button>  -->
+        <button on:click={() => woreIt(item)}>Wore It!</button> 
         <button on:click = {() => deleteItem(item)}>Remove item from my closet</button> 
     </div> 
 </div>
