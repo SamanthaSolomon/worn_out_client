@@ -1,10 +1,10 @@
 <script>
     //imports
     import Header from '../components/Header.svelte'
+    //libraries
+    import router from 'page'
     //import item props
     export let item
-    //destructure item object
-    const { id, img, category, style, use, color, wear_count } = item
 
     console.log('item-', item)
 
@@ -15,9 +15,10 @@
         
     // }
     
-    //Delete item
-    const deleteItem = async (id) => {
-        const response = await fetch(url + `/${id}`, {
+    // Delete item
+    const deleteItem = async (item) => {
+        console.log('id-', item)
+        const response = await fetch(url + `/${item.id}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json"
@@ -40,7 +41,7 @@
         <p>{item.use} | {item.category}</p>
         <h3>Worn {item.wear_count} times.</h3>
         <!-- <button on:click={() => woreIt()}>Wore It!</button>  -->
-        <button on:click = {() => deleteItem(item.id)}>Remove item from my closet</button> 
+        <button on:click = {() => deleteItem(item)}>Remove item from my closet</button> 
     </div> 
 </div>
 
