@@ -27,19 +27,47 @@
 
 let url = 'https://damp-peak-94577.herokuapp.com/users/1/items'
 
-//get all items
+//Get all items
 let items = []
 onMount( async () => {
     const response = await fetch(url)
     items = await response.json()
 })
 
-//see details of one item
+//Show details of one item
 let item = {}
 const getOneItem = async (id) => {
 	const response = await fetch(url + `/${id}`)
 	item = await response.json()
 }
+
+//Catch dispatch from WoreIt handleClick and update wear count
+const handleCount = (e) => {
+	const { wear_count, id} = e.detail
+	console.log('event-', e.detail)
+	let updatedItem = {...item}
+		 updatedItem.wear_count++
+	console.log('updatedItem-', updatedItem)
+	//Put updated wear count data
+	const addWearCount = async (updatedItem) => {
+		const response = await fetch (url + `/${item.id}`, {
+			method: "PUT",
+			headers: {
+				"Content-Type" : "application/json"
+			},
+			body: JSON.stringify(updatedItem)
+		})
+		if(response.ok){
+			const result = await response.json()
+			console.log('result-', result)
+		}
+	}
+	addWearCount()
+}
+
+
+
+
 </script>
 
 
@@ -55,7 +83,7 @@ const getOneItem = async (id) => {
 		<Closet {items} {getOneItem}/>
 	{/if}
 	{#if page === Item}
-		<Item item={item} />
+		<Item item={item} on:addCount={handleCount} />
 	{/if}
 	<Nav />
 </main>
