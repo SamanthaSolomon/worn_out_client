@@ -28,7 +28,6 @@
             router(`/closet`)
         }
     }
-
 </script>
 
 
