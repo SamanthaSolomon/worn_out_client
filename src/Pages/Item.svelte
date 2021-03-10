@@ -13,22 +13,7 @@
     //Dispatch woreIt handleClick to app
     const woreIt = (wear_count, id) => {
         dispatch('addCount', {wear_count: wear_count, id: id})
-
     }
-    
-    // async (wear_count, item) => {
-
-    //     const response = await fetch (url + `/${item.id}`, {
-    //         method: "PUT",
-    //         headers: {
-    //             "Content-Type": "application/json"
-    //         },
-    //         body: JSON.stringify(item)
-    //     })
-    //     if(response.ok){
-    //         const result = await response.json()
-    //     }
-    // }
     
     // Delete item
     const deleteItem = async (item) => {
@@ -55,7 +40,7 @@
         <p>{item.use} | {item.category}</p>
         <h3>Worn {item.wear_count} times.</h3>
         <button on:click={() => woreIt(item.wear_count, item.id)}>Wore It!</button> 
-        <button on:click = {() => deleteItem(item)}>Remove item from my closet</button> 
+        <button on:click = {() => deleteItem(item)}>Toss It!</button> 
     </div> 
 </div>
 

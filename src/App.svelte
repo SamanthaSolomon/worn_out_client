@@ -44,12 +44,11 @@ const getOneItem = async (id) => {
 //Catch dispatch from WoreIt handleClick and update wear count
 const handleCount = (e) => {
 	const { wear_count, id} = e.detail
-	console.log('event-', e.detail)
 	let updatedItem = {...item}
 		 updatedItem.wear_count++
-	console.log('updatedItem-', updatedItem)
+
 	//Put updated wear count data
-	const addWearCount = async (updatedItem) => {
+	const addWearCount = async () => {
 		const response = await fetch (url + `/${item.id}`, {
 			method: "PUT",
 			headers: {
@@ -59,7 +58,7 @@ const handleCount = (e) => {
 		})
 		if(response.ok){
 			const result = await response.json()
-			console.log('result-', result)
+			getOneItem(updatedItem.id)
 		}
 	}
 	addWearCount()

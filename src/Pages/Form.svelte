@@ -10,7 +10,7 @@
         successMessage = !successMessage
     }
 
-    //post new item
+    //Post new item
     let url = 'https://damp-peak-94577.herokuapp.com/users/1/items'
     let img = null, 
         category = null, 
@@ -131,7 +131,9 @@
         <option>Red</option>
         </select>
         
-        <button type="submit">Add to My Closet</button>
+        <div class="button-div">
+            <button type="submit">Add to My Closet</button>
+        </div>
     </form>
 </div>
 
@@ -149,5 +151,10 @@
     input, select{
         width: 20%;
         margin-bottom: 1rem
+    }
+
+    .button-div{
+        background-color: var(--teal);
+        padding: 1rem;
     }
 </style>
