@@ -25,7 +25,7 @@ import AddUpdateButton from "../components/AddUpdateButton.svelte"
 		</select>
     </form>
     <Find />
-    <AddUpdateButton />
+    <button>Wore It</button>
 </div>
 
 <style>

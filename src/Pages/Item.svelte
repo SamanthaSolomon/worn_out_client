@@ -1,10 +1,8 @@
 <script>
     //imports
     import Header from '../components/Header.svelte'
-    export let getOneItem
-
+    export let item
     
-    // getOneItem(id)
 
     //Delete item
     const handleClick = () => {

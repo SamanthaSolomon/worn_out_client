@@ -28,7 +28,11 @@ const handleClick = (id) => {
 
 
 <style>
-   img {
-    width: 10rem
+    div{
+        padding-top: 15%;
+    }
+
+   img{
+       width: 10rem;
    } 
 </style>

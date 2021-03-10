@@ -36,7 +36,6 @@ onMount( async () => {
 
 //see details of one item
 let item = {}
-
 const getOneItem = async (id) => {
 	const response = await fetch(url + '/id')
 	item = await response.json

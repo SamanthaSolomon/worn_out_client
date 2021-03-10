@@ -1,1 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Tajawal:wght@200&display=swap');
+
+:root{
+    --heading: 'Nanum Myeongjo', serif;
+    --para: 'Tajawal', sans-serif;
+    --teal: rgb(27, 56, 64);
+    --gray: rgb(49, 51, 53);
+    --white: rgb(255, 255, 255);
+}
+
+h1{
+    font-family: var(--heading);
+    font-size: 3rem;
+    color: var(--gray)
+}
+
+h2{
+    font-family: var(--para);
+    font-size: 2rem;
+    color: var(--gray);
+}
+
+h3{
+    font-family: var(--heading);
+    font-size: 1rem;
+    color: var(--teal);
+}
+
+h4{
+    font-family: var(--para);
+    font-size: 1.5rem;
+    color: var(--gray);
+}
+
+p{
+    font-family: var(--para);
+    font-size: 1.3rem;
+    color: var(--gray)
+}
+
+a{
+    text-decoration: none;
+    color: var(--gray)
+}
 
