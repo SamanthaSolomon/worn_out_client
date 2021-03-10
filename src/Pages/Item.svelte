@@ -3,7 +3,7 @@
     import Header from '../components/Header.svelte'
     export let item
     
-
+    //fetch call for update and delete
     //Delete item
     const handleClick = () => {
         console.log('delete button clicked')

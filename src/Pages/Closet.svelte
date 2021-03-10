@@ -3,9 +3,11 @@
 import Header from "../components/Header.svelte"
 export let items
 export let getOneItem
+import router from 'page'
 
 const handleClick = (id) => {
-    window.location.href = `/item/${id}`
+    getOneItem(id)
+    router(`/item/${id}`)
 }
 
 </script>

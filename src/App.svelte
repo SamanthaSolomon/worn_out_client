@@ -37,8 +37,10 @@ onMount( async () => {
 //see details of one item
 let item = {}
 const getOneItem = async (id) => {
-	const response = await fetch(url + '/id')
-	item = await response.json
+	const thisUrl = url + `$/{id}`
+	console.log('this url-', thisUrl)
+	const response = await fetch(url + `/${id}`)
+	item = await response.json()
 	console.log('item-', item)
 }
 </script>
@@ -56,7 +58,7 @@ const getOneItem = async (id) => {
 		<Closet {items} {getOneItem}/>
 	{/if}
 	{#if page === Item}
-		<Item />
+		<Item item={item} />
 	{/if}
 	<Nav />
 </main>
