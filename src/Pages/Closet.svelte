@@ -19,7 +19,7 @@ const handleClick = (id) => {
         <h4>{item.style} | {item.color}</h4>
         <p>{item.use} | {item.category}</p>
         <h3>Worn {item.wear_count} times.</h3>
-        <button on:click = {() => handleClick(item.id)}>Details</button>
+        <button class="details-button" on:click = {() => handleClick(item.id)}>Details ></button>
     </div>
     {:else}
     <h3 class="loading-message">Loading your closet...</h3>
