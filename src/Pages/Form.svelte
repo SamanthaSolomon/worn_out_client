@@ -91,6 +91,7 @@
         <option>Bag</option>
         <option>Heels</option>
         <option>Boots</option>
+        <option>Hat</option>
         </select>
 
         <label for="use">Use</label>
@@ -132,7 +133,7 @@
         </select>
         
         <div class="button-div">
-            <button type="submit">Add to My Closet</button>
+            <button type="submit" on:click={successMessage}>Add to My Closet</button>
         </div>
     </form>
 </div>
