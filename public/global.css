@@ -44,6 +44,7 @@ a{
 }
 
 button{
-    margin-top: 0;
+    background-color: var(--teal);
+    padding: 1rem;
 }
 

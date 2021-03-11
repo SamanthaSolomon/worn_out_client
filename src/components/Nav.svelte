@@ -1,5 +1,3 @@
-<script>
-</script>
 
 <div class="nav-div">
    <nav>

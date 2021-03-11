@@ -39,8 +39,12 @@
         <h4>{item.style} | {item.color}</h4>
         <p>{item.use} | {item.category}</p>
         <h3>Worn {item.wear_count} times.</h3>
-        <button on:click={() => woreIt(item.wear_count, item.id)}>Wore It!</button> 
-        <button on:click = {() => deleteItem(item)}>Toss It!</button> 
+        <div class="button-div">
+            <button on:click={() => woreIt(item.wear_count, item.id)}>Wore It!</button> 
+        </div>
+        <div class="button-div">
+            <button on:click = {() => deleteItem(item)}>Toss It!</button>
+        </div> 
     </div> 
 </div>
 

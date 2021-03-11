@@ -1,9 +1,11 @@
 <script>
 //imports
 import Header from "../components/Header.svelte"
+//libraries
+import router from 'page'
+//props
 export let items
 export let getOneItem
-import router from 'page'
 
 const handleClick = (id) => {
     getOneItem(id)

@@ -5,7 +5,7 @@
     
     //show modal
     let successMessage = false
-
+    
     const toggleModal = () => {
         successMessage = !successMessage
     }

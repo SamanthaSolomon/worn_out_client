@@ -1,4 +1,5 @@
 <script>
+//props
 export let message
 export let successMessage = false
 export let isAdded = false

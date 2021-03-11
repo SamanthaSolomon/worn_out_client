@@ -1,7 +1,6 @@
 <script>
 //libraries
 import router from 'page'
-
 </script>
 
 <div>
