@@ -133,7 +133,7 @@
         </select>
         
         <div class="button-div">
-            <button type="submit" on:click={successMessage}>Add to My Closet</button>
+            <button type="submit">Add to My Closet</button>
         </div>
     </form>
 </div>
