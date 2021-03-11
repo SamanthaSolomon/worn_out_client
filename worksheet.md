@@ -51,7 +51,7 @@ A wardrobe tracking app that allows you to track how often you wear all your clo
     user_id: foreign key
     img: string
     category: string
-    type: string
+    style: string
     use: string
     color: string
     wear_count: integer 
@@ -69,7 +69,7 @@ A wardrobe tracking app that allows you to track how often you wear all your clo
  </details>
 
 <details>
-<summary >Type: </summary>
+<summary>Style: </summary>
  - Sweater
  - Sweatshirt
  - t-shirt
@@ -180,35 +180,56 @@ Desktop
 
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Basic API w/ seed data | H | 1 hr| 4 |  |
-| Customized REST routes | H | 1 hr| 3 |  |
-| Query routes | H | 2 hr|  |  |
-| Setting up component and route structure | H | 2 hr| 4 |  |
-| Nav component with animation | H | 2 hr|  |  |
-| About component | H | 1 hr|  |  |
-| Main component w/ current date| H | 2 hr|  |  |
-| Worn today update component | H | 3 hr|  |  |
-| By category search component | H | 5 hr|  |  |
-| Form to update route component | H | 3 hr|  |  |
-| Closet component | H | 1 hr|  |  |
-| Worn most get route w/ query component | H | 3 hr|  |  |
-| Worn least get route w/ query component | H | 3 hr|  |  |
-| All component | H | 2 hr| 0.5 |  |
-| Item component | H | 2 hr|  |  |
-| Heat map component | H | 8 hr|  |  |
-| Update button | H | 2 hr|  |  |
-| Delete button | H | 1 hr|  |  |
-| Styling | H | 16 hr|  |  |
-|Total  |  | 61 hr|  |  |
+| Basic API w/ seed data | H | 1 hr| 4 | 4 |
+| Customized REST routes | H | 1 hr| 3 | 4 |
+| Query routes | H | 2 hr| - | - |
+| Setting up component and route structure | H | 2 hr| 4 | 4 |
+| Nav component | H | 2 hr| 2 | 2 |
+| About component | H | 1 hr| - | - |
+| Main component w/ current date| H | 2 hr| - | - |
+| By category search component | H | 5 hr| - | - |
+| Form to update route component | H | 3 hr| - | - |
+| Closet component | H | 1 hr| 1 | 1 |
+| Worn most get route w/ query component | H | 3 hr| - | - |
+| Worn least get route w/ query component | H | 3 hr| - | - |
+| Item component | H | 2 hr| 6 | 6 |
+| Heat map component | H | 8 hr| - | - |
+| Update button | H | 2 hr| 5 | 5 |
+| Delete button | H | 1 hr| 5 | 5 |
+| Styling | H | 16 hr| 10 | 10 |
+| Research, Learning, Googling, Crying | H | |  | 25 |
+|Total  |  | 61 hr|  | 66 |
 
 
 
 ## Additional Libraries
 - Svelte
 - Ruby on Rails
-- Svelte Heatmap
-- pages.js, for routing
-- svelte-forms-lib
+- pages.js
 
 ## Code Snippet
 
+Updating the wear count by one
+
+```//Catch dispatch from WoreIt handleClick and update wear count
+const handleCount = (e) => {
+	const { wear_count, id} = e.detail
+	let updatedItem = {...item}
+		 updatedItem.wear_count++
+
+	//Put updated wear count data
+	const addWearCount = async () => {
+		const response = await fetch (url + `/${item.id}`, {
+			method: "PUT",
+			headers: {
+				"Content-Type" : "application/json"
+			},
+			body: JSON.stringify(updatedItem)
+		})
+		if(response.ok){
+			const result = await response.json()
+			getOneItem(updatedItem.id)
+		}
+	}
+	addWearCount()
+}```
