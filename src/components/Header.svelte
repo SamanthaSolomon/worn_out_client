@@ -27,4 +27,5 @@ import router from 'page'
         font-family: var(--heading);
         font-size: 1.5rem;
     }
+
 </style>

@@ -36,4 +36,22 @@ import AddUpdateButton from "../components/AddUpdateButton.svelte"
 	h1 {
 		color: black;
 	}
+
+/* Tablet styles */
+@media only screen and (min-width: 768px){
+
+	.home{
+		padding-top: 12%;
+	}
+}
+
+/* Desktop styles */
+@media only screen and (min-width: 1440px){
+
+	.home{
+		padding-top: 8%;
+	}
+
+
+}
 </style>
