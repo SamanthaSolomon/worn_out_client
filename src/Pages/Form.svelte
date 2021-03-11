@@ -5,7 +5,7 @@
     
     //show modal
     let successMessage = false
-    
+
     const toggleModal = () => {
         successMessage = !successMessage
     }
@@ -139,7 +139,7 @@
 
 <style>
     .form{
-        text-align: center;
+        padding-top: 15px; 
     }
 
     .form-inputs{
@@ -148,13 +148,4 @@
         align-items: center;
     }
 
-    input, select{
-        width: 20%;
-        margin-bottom: 1rem
-    }
-
-    .button-div{
-        background-color: var(--teal);
-        padding: 1rem;
-    }
 </style>

@@ -22,7 +22,9 @@ const handleClick = (id) => {
         <img src={item.img} alt={item.color}{item.style}>
         <h4>{item.style} | {item.color}</h4>
         <p>{item.use} | {item.category}</p>
-        <button class="details-button" on:click = {() => handleClick(item.id)}>Details ></button>
+        <div class="button-div">
+            <button class="details-button" on:click = {() => handleClick(item.id)}>Details ></button>
+        </div>
     </div>
     {:else}
     <h3 class="loading-message">Loading your closet...</h3>
@@ -33,6 +35,7 @@ const handleClick = (id) => {
 <style>
     div{
         padding-top: 15%;
+        padding-bottom: 15%;
         text-align: center;
     }
 

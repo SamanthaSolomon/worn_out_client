@@ -51,6 +51,7 @@
 <style>
      div{
         padding-top: 15%;
+        padding-bottom: 15%;
         text-align: center;
     }
 
@@ -68,5 +69,10 @@
 
    p{
        margin: 5px; 
+   }
+
+   .button-div{
+      padding-top: 20px;
+      padding-bottom: 20px; 
    }
 </style>

@@ -24,7 +24,7 @@ export let isAdded = false
     .modal{
         padding: 10px;
         max-width: 400px;
-        margin: 10px auto;
+        margin: 20px auto;
         text-align: center;
         background: white
     }

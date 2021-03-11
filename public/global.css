@@ -45,6 +45,25 @@ a{
 
 button{
     background-color: var(--teal);
-    padding: 1rem;
+    font-family: var(--heading);
+    color: var(--white);
+    border: none;
+    padding: 7%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+label{
+    font-family: var(--para);
+    font-size: 1.2rem;
+}
+
+input, select{
+    width: 60%;
+    margin-bottom: 1rem;
+    padding: 7px;
+    border: none;
+    border-bottom: 1px solid grey;
+    font-family: var(--para);
+}
+
 
