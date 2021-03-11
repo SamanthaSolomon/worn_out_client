@@ -139,7 +139,7 @@
 
 <style>
     .form{
-        padding-top: 15px; 
+        padding-top: 30%; 
     }
 
     .form-inputs{
@@ -147,5 +147,33 @@
         flex-direction: column;
         align-items: center;
     }
+
+     /* Tablet styles */
+ @media only screen and (min-width: 768px){
+
+    .form{
+        padding-top: 15%;
+    }
+
+    .button-div{
+        padding-top: 5%
+    }
+
+
+
+}
+
+/* Desktop styles */
+@media only screen and (min-width: 1440px){
+
+    .form{
+        padding-top: 7%;
+    }
+    
+    .button-div{
+        padding-top: 3%
+    }
+
+}
 
 </style>

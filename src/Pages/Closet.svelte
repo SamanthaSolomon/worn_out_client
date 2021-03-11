@@ -23,7 +23,7 @@ const handleClick = (id) => {
         <h4>{item.style} | {item.color}</h4>
         <p>{item.use} | {item.category}</p>
         <div class="button-div">
-            <button class="details-button" on:click = {() => handleClick(item.id)}>Details ></button>
+            <button class="details-button" on:click = {() => handleClick(item.id)}>Details  ></button>
         </div>
     </div>
     {:else}
@@ -40,7 +40,7 @@ const handleClick = (id) => {
     }
 
    img{
-       width: 10rem;
+       width: 55%;
    }
    
    h4{
@@ -57,5 +57,10 @@ const handleClick = (id) => {
 
    .loading-message{
        padding-top: 30%;
+   }
+
+   .button-div{
+       padding-top: 30px;
+       padding-bottom: 0px;
    }
 </style>
