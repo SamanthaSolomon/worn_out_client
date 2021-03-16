@@ -2,9 +2,9 @@
 
 ## Project Links
 
-- [GitHub Repo]
-- [Client-side link](https://wornout.netlify.app/)
-- [API link](https://damp-peak-94577.herokuapp.com/users/1/items)
+- [Deployed on Netlify](https://wornout.netlify.app/)
+- [See the backend repo](https://github.com/SamanthaSolomon/worn_out_api)
+- [API Deployed on Heroku](https://damp-peak-94577.herokuapp.com/users/1/items)
 
 ## Project Description
 
