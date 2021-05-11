@@ -1,5 +1,5 @@
-# Project Overview: WornOut
-
+# WornOut
+![](https://res.cloudinary.com/dcvgmixhx/image/upload/v1615927359/WornOut/Wornout-closet.png)
 ## Project Links
 
 - [Deployed on Netlify](https://wornout.netlify.app/)
@@ -9,6 +9,14 @@
 ## Project Description
 
 A wardrobe tracking app that allows you to track how often you wear all your clothing. Provides data on what clothing & accessories you wear the most, and which items you should get rid of because you never wear them.
+
+## Project Status: Incomplete
+Priorities to complete:
+ - Search route/request on home page baised on category query
+ - Heatmap of wear count on details component
+ - Worn Most/Worn Least dashboard with data summary
+ - User creation/login/authentication
+ - Image uploader
 
 ## User Stories
 |#| User needs |  Functionality |
@@ -121,17 +129,6 @@ A wardrobe tracking app that allows you to track how often you wear all your clo
 
 ## Architecture
 [Architecture](https://res.cloudinary.com/dcvgmixhx/image/upload/v1614710835/WornOut/Architecture_fvnuvn.png)
-
-## Wireframes
-
-Mobile
-
-
-Tablet
-
-
-Desktop
-
 
 ## MVP/PostMVP 
 
