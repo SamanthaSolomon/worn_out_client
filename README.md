@@ -1,4 +1,4 @@
-# WornOut
+# WornOut - Front End
 ![](https://res.cloudinary.com/dcvgmixhx/image/upload/v1615927359/WornOut/Wornout-closet.png)
 ## Project Links
 
